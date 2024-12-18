@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-futures-and-syntax" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.7.0">
+<title data-rh="true">Futures and Syntax | Unifyair Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://unifyair.github.io/docs/futures-and-syntax"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Futures and Syntax | Unifyair Docs"><meta data-rh="true" name="description" content="Futures and the Async Syntax"><meta data-rh="true" property="og:description" content="Futures and the Async Syntax"><link data-rh="true" rel="icon" href="/docs/img/favicon.png"><link data-rh="true" rel="canonical" href="https://unifyair.github.io/docs/futures-and-syntax"><link data-rh="true" rel="alternate" href="https://unifyair.github.io/docs/futures-and-syntax" hreflang="en"><link data-rh="true" rel="alternate" href="https://unifyair.github.io/docs/futures-and-syntax" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/docs/blog/rss.xml" title="Unifyair Docs RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/docs/blog/atom.xml" title="Unifyair Docs Atom Feed">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-vsc-dark-plus.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css" integrity="sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM" crossorigin="anonymous"><link rel="stylesheet" href="/docs/assets/css/styles.7051e722.css">
+<script src="/docs/assets/js/runtime~main.0d260cf2.js" defer="defer"></script>
+<script src="/docs/assets/js/main.95977b49.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"dark")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><link rel="preload" as="image" href="/docs/img/logo.svg"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><nav aria-label="Main" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a href="https://unifyair.com" target="_blank" rel="noopener noreferrer" class="navbar__brand"><div class="navbar__logo"><img src="/docs/img/logo.svg" alt="Unfiyair Docs" class="unifyair-logo themedComponent_mlkZ themedComponent--light_NVdE"><img src="/docs/img/logo.svg" alt="Unfiyair Docs" class="unifyair-logo themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a></div><div class="navbar__items navbar__items--right"><a href="https://unifyair.com/" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link navbar-center nav-link-same-page">Home<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><a href="https://unifyair.com/about" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link navbar-center nav-link-same-page">About<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><a aria-current="page" class="navbar__item navbar__link navbar-center nav-link-same-page navbar__link--active" href="/docs/">Docs</a><a href="https://unifyair.com/contact" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link navbar-center nav-link-same-page">Contact<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><a href="https://discord.gg/yuJHdZ4vEF" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link navbar-discord-link navbar-image-link" aria-label="Discord"></a><a href="https://github.com/unifyair" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link navbar-github-link navbar-image-link" aria-label="GitHub repository"></a><div class="navbarSearchContainer_Bca1"><div class="navbar__search searchBarContainer_NW3z" dir="ltr"><input placeholder="Search" aria-label="Search" class="navbar__search-input searchInput_YFbd" value=""><div class="loadingRing_RJI3 searchBarLoadingRing_YnHq"><div></div><div></div><div></div><div></div></div></div></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="Scroll back to top" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="Docs sidebar" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link" href="/docs/">Tutorial Intro</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/tutorial---basics">Tutorial - Basics</a><button aria-label="Expand sidebar category &#x27;Tutorial - Basics&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist" href="/docs/category/tutorial---extras">Tutorial - Extras</a><button aria-label="Expand sidebar category &#x27;Tutorial - Extras&#x27;" aria-expanded="false" type="button" class="clean-btn menu__caret"></button></div></li><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/docs/futures-and-syntax">Futures and Syntax</a></li></ul></nav></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="Breadcrumbs"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="Home page" class="breadcrumbs__link" href="/docs/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">Futures and Syntax</span><meta itemprop="position" content="1"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">On this page</button></div><div class="theme-doc-markdown markdown"><header><h1>Futures and Syntax</h1></header>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="futures-and-the-async-syntax">Futures and the Async Syntax<a href="#futures-and-the-async-syntax" class="hash-link" aria-label="Direct link to Futures and the Async Syntax" title="Direct link to Futures and the Async Syntax">​</a></h2>
+<p>The key elements of asynchronous programming in Rust are <em>futures</em> and Rust’s
+<code>async</code> and <code>await</code> keywords.</p>
+<p>A <em>future</em> is a value that may not be ready now but will become ready at some
+point in the future. (This same concept shows up in many languages, sometimes
+under other names such as <em>task</em> or <em>promise</em>.) Rust provides a <code>Future</code> trait
+as a building block so that different async operations can be implemented with
+different data structures but with a common interface. In Rust, futures are
+types that implement the <code>Future</code> trait. Each future holds its own information
+about the progress that has been made and what &quot;ready&quot; means.</p>
+<p>You can apply the <code>async</code> keyword to blocks and functions to specify that they
+can be interrupted and resumed. Within an async block or async function, you can
+use the <code>await</code> keyword to <em>await a future</em> (that is, wait for it to become
+ready). Any point where you await a future within an async block or function is
+a potential spot for that async block or function to pause and resume. The
+process of checking with a future to see if its value is available yet is called
+<em>polling</em>.</p>
+<p>Some other languages, such as C# and JavaScript, also use <code>async</code> and <code>await</code>
+keywords for async programming. If you’re familiar with those languages, you may
+notice some significant differences in how Rust does things, including how it
+handles the syntax. That’s for good reason, as we’ll see!</p>
+<p>When writing async Rust, we use the <code>async</code> and <code>await</code> keywords most of the
+time. Rust compiles them into equivalent code using the <code>Future</code> trait, much as
+it compiles <code>for</code> loops into equivalent code using the <code>Iterator</code> trait. Because
+Rust provides the <code>Future</code> trait, though, you can also implement it for your own
+data types when you need to. Many of the functions we’ll see throughout this
+chapter return types with their own implementations of <code>Future</code>. We’ll return to
+the definition of the trait at the end of the chapter and dig into more of how
+it works, but this is enough detail to keep us moving forward.</p>
+<p>This may all feel a bit abstract, so let’s write our first async program: a
+little web scraper. We’ll pass in two URLs from the command line, fetch both of
+them concurrently, and return the result of whichever one finishes first. This
+example will have a fair bit of new syntax, but don’t worry—we’ll explain
+everything you need to know as we go.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="our-first-async-program">Our First Async Program<a href="#our-first-async-program" class="hash-link" aria-label="Direct link to Our First Async Program" title="Direct link to Our First Async Program">​</a></h2>
+<p>To keep the focus of this chapter on learning async rather than juggling parts
+of the ecosystem, we’ve created the <code>trpl</code> crate (<code>trpl</code> is short for “The Rust
+Programming Language”). It re-exports all the types, traits, and functions
+you’ll need, primarily from the [<code>futures</code>][futures-crate] and
+[<code>tokio</code>][tokio] crates. The <code>futures</code> crate is an official home
+for Rust experimentation for async code, and it’s actually where the <code>Future</code>
+trait was originally designed. Tokio is the most widely used async runtime in
+Rust today, especially for web applications. There are other great runtimes out
+there, and they may be more suitable for your purposes. We use the <code>tokio</code> crate
+under the hood for <code>trpl</code> because it’s well tested and widely used.</p>
+<p>In some cases, <code>trpl</code> also renames or wraps the original APIs to keep you
+focused on the details relevant to this chapter. If you want to understand what
+the crate does, we encourage you to check out [its source
+code][crate-source]. You’ll be able to see what crate each
+re-export comes from, and we’ve left extensive comments explaining what the
+crate does.</p>
+<p>Create a new binary project named <code>hello-async</code> and add the <code>trpl</code> crate as a
+dependency:</p>
+<div class="language-console codeBlockContainer_Ckt0 theme-code-block"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-console codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line"><span class="token plain">$ cargo new hello-async</span><br></span><span class="token-line"><span class="token plain">$ cd hello-async</span><br></span><span class="token-line"><span class="token plain">$ cargo add trpl</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Now we can use the various pieces provided by <code>trpl</code> to write our first async
+program. We’ll build a little command line tool that fetches two web pages,
+pulls the <code>&lt;title&gt;</code> element from each, and prints out the title of whichever
+page finishes that whole process first.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="defining-the-page_title-function">Defining the page_title Function<a href="#defining-the-page_title-function" class="hash-link" aria-label="Direct link to Defining the page_title Function" title="Direct link to Defining the page_title Function">​</a></h3>
+<p>Let’s start by writing a function that takes one page URL as a parameter, makes
+a request to it, and returns the text of the title element (see Listing 17-1).</p>
+<p>Iterators do nothing unless you call their <code>next</code> method—whether directly or by
+using <code>for</code> loops or methods such as <code>map</code> that use <code>next</code> under the hood.
+Likewise, futures do nothing unless you explicitly ask them to. This laziness
+allows Rust to avoid running async code until it’s actually needed.</p>
+<blockquote>
+<p>Note: This is different from the behavior we saw in the previous chapter when
+using <code>thread::spawn</code> in [Creating a New Thread with
+spawn][thread-spawn], where the closure we passed to another
+thread started running immediately. It’s also different from how many other
+languages approach async. But it’s important for Rust, and we’ll see why
+later.</p>
+</blockquote>
+<p>Once we have <code>response_text</code>, we can parse it into an instance of the <code>Html</code>
+type using <code>Html::parse</code>. Instead of a raw string, we now have a data type we
+can use to work with the HTML as a richer data structure. In particular, we can
+use the <code>select_first</code> method to find the first instance of a given CSS
+selector. By passing the string <code>&quot;title&quot;</code>, we’ll get the first <code>&lt;title&gt;</code> element
+in the document, if there is one. Because there may not be any matching element,
+<code>select_first</code> returns an <code>Option&lt;ElementRef&gt;</code>. Finally, we use the
+<code>Option::map</code> method, which lets us work with the item in the <code>Option</code> if it’s
+present, and do nothing if it isn’t. (We could also use a <code>match</code> expression
+here, but <code>map</code> is more idiomatic.) In the body of the function we supply to
+<code>map</code>, we call <code>inner_html</code> on the <code>title_element</code> to get its content, which is
+a <code>String</code>. When all is said and done, we have an <code>Option&lt;String&gt;</code>.</p>
+<p>Notice that Rust’s <code>await</code> keyword goes <em>after</em> the expression you’re awaiting,
+not before it. That is, it’s a <em>postfix</em> keyword. This may differ from what
+you’re used to if you’ve used <code>async</code> in other languages, but in Rust it makes
+chains of methods much nicer to work with. As a result, we can change the body
+of <code>page_url_for</code> to chain the <code>trpl::get</code> and <code>text</code> function calls together
+with <code>await</code> between them, as shown in Listing 17-2.</p>
+<p>section.</p>
+<ul>
+<li>The returned trait is a <code>Future</code> with an associated type of <code>Output</code>. Notice
+that the <code>Output</code> type is <code>Option&lt;String&gt;</code>, which is the same as the original
+return type from the <code>async fn</code> version of <code>page_title</code>.</li>
+<li>All of the code called in the body of the original function is wrapped in an
+<code>async move</code> block. Remember that blocks are expressions. This whole block is
+the expression returned from the function.</li>
+<li>This async block produces a value with the type <code>Option&lt;String&gt;</code>, as just
+described. That value matches the <code>Output</code> type in the return type. This
+is just like other blocks you have seen.</li>
+<li>The new function body is an <code>async move</code> block because of how it uses the
+<code>url</code> parameter. (We’ll talk much more about <code>async</code> versus <code>async move</code> later
+in the chapter.)</li>
+<li>The new version of the function has a kind of lifetime we haven’t seen before
+in the output type: <code>&#x27;_</code>. Because the function returns a future that refers to
+a reference—in this case, the reference from the <code>url</code> parameter—we need to
+tell Rust that we want that reference to be included. We don’t have to name
+the lifetime here, because Rust is smart enough to know there’s only one
+reference that could be involved, but we <em>do</em> have to be explicit that the
+resulting future is bound by that lifetime.</li>
+</ul>
+<p>Now we can call <code>page_title</code> in <code>main</code>.</p>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="determining-a-single-pages-title">Determining a Single Page’s Title<a href="#determining-a-single-pages-title" class="hash-link" aria-label="Direct link to Determining a Single Page’s Title" title="Direct link to Determining a Single Page’s Title">​</a></h2>
+<p>To start, we’ll just get the title for a single page. In Listing 17-3, we follow
+the same pattern we used in Chapter 12 to get command line arguments in the
+[Accepting Command Line Arguments][cli-args] section. Then we
+pass the first URL <code>page_title</code> and await the result. Because the value
+produced by the future is an <code>Option&lt;String&gt;</code>, we use a <code>match</code> expression to
+print different messages to account for whether the page had a <code>&lt;title&gt;</code>.</p>
+<div class="language-text codeBlockContainer_Ckt0 theme-code-block"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-text codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line"><span class="token plain">error[E0752]: `main` function is not allowed to be `async`</span><br></span><span class="token-line"><span class="token plain"> --&gt; src/main.rs:6:1</span><br></span><span class="token-line"><span class="token plain">  |</span><br></span><span class="token-line"><span class="token plain">6 | async fn main() {</span><br></span><span class="token-line"><span class="token plain">  | ^^^^^^^^^^^^^^^ `main` function is not allowed to be `async`</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>The reason <code>main</code> can’t be marked <code>async</code> is that async code needs a <em>runtime</em>:
+a Rust crate that manages the details of executing asynchronous code. A
+program’s <code>main</code> function can <em>initialize</em> a runtime, but it’s not a runtime
+<em>itself</em>. (We’ll see more about why this is the case in a bit.) Every Rust
+program that executes async code has at least one place where it sets up a
+runtime and executes the futures.</p>
+<p>Most languages that support async bundle a runtime, but Rust does not. Instead,
+there are many different async runtimes available, each of which makes different
+tradeoffs suitable to the use case it targets. For example, a high-throughput
+web server with many CPU cores and a large amount of RAM has very different
+needs than a microcontroller with a single core, a small amount of RAM, and no
+heap allocation ability. The crates that provide those runtimes also often
+supply async versions of common functionality such as file or network I/O.</p>
+<p>Here, and throughout the rest of this chapter, we’ll use the <code>run</code> function from
+the <code>trpl</code> crate, which takes a future as an argument and runs it to completion.
+Behind the scenes, calling <code>run</code> sets up a runtime that’s used to run the future
+passed in. Once the future completes, <code>run</code> returns whatever value the future
+produced.</p>
+<p>We could pass the future returned by <code>page_title</code> directly to <code>run</code>, and once it
+completed, we could match on the resulting <code>Option&lt;String&gt;</code>, as
+we tried to do in Listing 17-3. However, for most of the examples in the chapter
+(and most async code in the real world), we’ll be doing more than just one
+async function call, so instead we’ll pass an <code>async</code> block and explicitly
+await the result of the <code>page_title</code> call, as in Listing 17-4.</p>
+<p>--&gt;</p>
+<p>When we run this code, we get the behavior we expected initially:</p>
+<div class="language-console codeBlockContainer_Ckt0 theme-code-block"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-console codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line"><span class="token plain">$ cargo run -- https://www.rust-lang.org</span><br></span><span class="token-line"><span class="token plain">    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.05s</span><br></span><span class="token-line"><span class="token plain">     Running `target/debug/async_await &#x27;https://www.rust-lang.org&#x27;`</span><br></span><span class="token-line"><span class="token plain">The title for https://www.rust-lang.org was</span><br></span><span class="token-line"><span class="token plain">            Rust Programming Language</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Phew—we finally have some working async code! But before we add the code to race
+the two sites against each other, let’s briefly turn our attention back to how
+futures work.</p>
+<p>Each <em>await point</em>—that is, every place where the code uses the <code>await</code>
+keyword—represents a place where control is handed back to the runtime. To
+make that work, Rust needs to keep track of the state involved in the async
+block so that the runtime can kick off some other work and then come back when
+it’s ready to try advancing the first one again. This is an invisible state machine,
+as if you’d written an enum like this to save the current state at each await
+point:</p>
+<div class="language-rust codeBlockContainer_Ckt0 theme-code-block"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-rust codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line"><span class="token punctuation">{</span><span class="token punctuation">{</span><span class="token plain">#rustdoc_include </span><span class="token punctuation">..</span><span class="token operator">/</span><span class="token plain">listings</span><span class="token operator">/</span><span class="token plain">ch17</span><span class="token operator">-</span><span class="token keyword">async</span><span class="token operator">-</span><span class="token keyword">await</span><span class="token operator">/</span><span class="token plain">no</span><span class="token operator">-</span><span class="token plain">listing</span><span class="token operator">-</span><span class="token plain">state</span><span class="token operator">-</span><span class="token plain">machine</span><span class="token operator">/</span><span class="token plain">src</span><span class="token operator">/</span><span class="token plain">lib</span><span class="token punctuation">.</span><span class="token plain">rs</span><span class="token punctuation">:</span><span class="token keyword">enum</span><span class="token punctuation">}</span><span class="token punctuation">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>Writing the code to transition between each state by hand would be tedious and
+error-prone, however, especially when you need to add more functionality and
+more states to the code later. Fortunately, the Rust compiler creates and
+manages the state machine data structures for async code automatically. The
+normal borrowing and ownership rules around data structures all still apply, and
+happily, the compiler also handles checking those for us and provides useful
+error messages. We’ll work through a few of those later in the chapter.</p>
+<p>Ultimately, something has to execute this state machine, and that something is a
+runtime. (This is why you may come across references to <em>executors</em>
+when looking into runtimes: an executor is the part of a runtime responsible for
+executing the async code.)</p>
+<p>Now you can see why the compiler stopped us from making <code>main</code> itself an async
+function back in Listing 17-3. If <code>main</code> were an async function, something else
+would need to manage the state machine for whatever future <code>main</code> returned, but
+<code>main</code> is the starting point for the program! Instead, we called the <code>trpl::run</code>
+function in <code>main</code> to set up a runtime and run the future returned by the
+<code>async</code> block until it returns <code>Ready</code>.</p>
+<blockquote>
+<p>Note: Some runtimes provide macros so you <em>can</em> write an async <code>main</code>
+function. Those macros rewrite <code>async fn main() { ... }</code> to be a normal <code>fn main</code>, which does the same thing we did by hand in Listing 17-5: call a
+function that runs a future to completion the way <code>trpl::run</code> does.</p>
+</blockquote>
+<p>Now let’s put these pieces together and see how we can write concurrent code.</p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="racing-our-two-urls-against-each-other">Racing Our Two URLs Against Each Other<a href="#racing-our-two-urls-against-each-other" class="hash-link" aria-label="Direct link to Racing Our Two URLs Against Each Other" title="Direct link to Racing Our Two URLs Against Each Other">​</a></h3>
+<p>In Listing 17-5, we call <code>page_title</code> with two different URLs passed in from the
+command line and race them.</p>
+<p>We begin by calling <code>page_title</code> for each of the user-supplied URLs. We save the
+resulting futures as <code>title_fut_1</code> and <code>title_fut_2</code>. Remember, these don’t do
+anything yet, because futures are lazy and we haven’t yet awaited them. Then we
+pass the futures to <code>trpl::race</code>, which returns a value to indicate which of the
+futures passed to it finishes first.</p>
+<blockquote>
+<p>Note: Under the hood, <code>race</code> is built on a more general function, <code>select</code>,
+which you will encounter more often in real-world Rust code. A <code>select</code>
+function can do a lot of things that the <code>trpl::race</code> function can’t, but it
+also has some additional complexity that we can skip over for now.</p>
+</blockquote>
+<p>Either future can legitimately “win,” so it doesn’t make sense to return a
+<code>Result</code>. Instead, <code>race</code> returns a type we haven’t seen before,
+<code>trpl::Either</code>. The <code>Either</code> type is somewhat similar to a <code>Result</code> in that it
+has two cases. Unlike <code>Result</code>, though, there is no notion of success or
+failure baked into <code>Either</code>. Instead, it uses <code>Left</code> and <code>Right</code> to indicate
+“one or the other”:</p>
+<div class="language-rust codeBlockContainer_Ckt0 theme-code-block"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-rust codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line"><span class="token keyword">enum</span><span class="token plain"> </span><span class="token type-definition class-name">Either</span><span class="token operator">&lt;</span><span class="token class-name">A</span><span class="token punctuation">,</span><span class="token plain"> </span><span class="token class-name">B</span><span class="token operator">&gt;</span><span class="token plain"> </span><span class="token punctuation">{</span><span class="token plain"></span><br></span><span class="token-line"><span class="token plain">    </span><span class="token class-name">Left</span><span class="token punctuation">(</span><span class="token class-name">A</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token plain"></span><br></span><span class="token-line"><span class="token plain">    </span><span class="token class-name">Right</span><span class="token punctuation">(</span><span class="token class-name">B</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token plain"></span><br></span><span class="token-line"><span class="token plain"></span><span class="token punctuation">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div>
+<p>The <code>race</code> function returns <code>Left</code> with that future’s output if the first
+argument wins, and <code>Right</code> with the second future argument’s output if <em>that</em>
+one wins. This matches the order the arguments appear in when calling the
+function: the first argument is to the left of the second argument.</p>
+<p>We also update <code>page_title</code> to return the same URL passed in. That way, if
+the page that returns first does not have a <code>&lt;title&gt;</code> we can resolve, we can
+still print a meaningful message. With that information available, we wrap up by
+updating our <code>println!</code> output to indicate both which URL finished first and
+what, if any, the <code>&lt;title&gt;</code> is for the web page at that URL.</p>
+<p>You have built a small working web scraper now! Pick a couple URLs and run the
+command line tool. You may discover that some sites are consistently faster than
+others, while in other cases the faster site varies from run to run. More
+importantly, you’ve learned the basics of working with futures, so now we can
+dig deeper into what we can do with async.</p>
+<div class="language-rust codeBlockContainer_Ckt0 theme-code-block"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-rust codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line"><span class="token keyword">use</span><span class="token plain"> </span><span class="token namespace">std</span><span class="token namespace punctuation">::</span><span class="token plain">slice</span><span class="token punctuation">;</span><span class="token plain"></span><br></span><span class="token-line"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line"><span class="token plain"></span><span class="token keyword">fn</span><span class="token plain"> </span><span class="token function-definition function">split_at_mut</span><span class="token punctuation">(</span><span class="token plain">values</span><span class="token punctuation">:</span><span class="token plain"> </span><span class="token operator">&amp;</span><span class="token keyword">mut</span><span class="token plain"> </span><span class="token punctuation">[</span><span class="token keyword">i32</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token plain"> mid</span><span class="token punctuation">:</span><span class="token plain"> </span><span class="token keyword">usize</span><span class="token punctuation">)</span><span class="token plain"> </span><span class="token punctuation">-&gt;</span><span class="token plain"> </span><span class="token punctuation">(</span><span class="token operator">&amp;</span><span class="token keyword">mut</span><span class="token plain"> </span><span class="token punctuation">[</span><span class="token keyword">i32</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token plain"> </span><span class="token operator">&amp;</span><span class="token keyword">mut</span><span class="token plain"> </span><span class="token punctuation">[</span><span class="token keyword">i32</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token plain"> </span><span class="token punctuation">{</span><span class="token plain"></span><br></span><span class="token-line"><span class="token plain">    </span><span class="token keyword">let</span><span class="token plain"> len </span><span class="token operator">=</span><span class="token plain"> values</span><span class="token punctuation">.</span><span class="token function">len</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token plain"></span><br></span><span class="token-line"><span class="token plain">    </span><span class="token keyword">let</span><span class="token plain"> ptr </span><span class="token operator">=</span><span class="token plain"> values</span><span class="token punctuation">.</span><span class="token function">as_mut_ptr</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token plain"></span><br></span><span class="token-line"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line"><span class="token plain">    </span><span class="token macro property">assert!</span><span class="token punctuation">(</span><span class="token plain">mid </span><span class="token operator">&lt;=</span><span class="token plain"> len</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token plain"></span><br></span><span class="token-line"><span class="token plain" style="display:inline-block"></span><br></span><span class="token-line"><span class="token plain">    </span><span class="token keyword">unsafe</span><span class="token plain"> </span><span class="token punctuation">{</span><span class="token plain"></span><br></span><span class="token-line"><span class="token plain">        </span><span class="token punctuation">(</span><span class="token plain"></span><br></span><span class="token-line"><span class="token plain">            </span><span class="token namespace">slice</span><span class="token namespace punctuation">::</span><span class="token function">from_raw_parts_mut</span><span class="token punctuation">(</span><span class="token plain">ptr</span><span class="token punctuation">,</span><span class="token plain"> mid</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token plain"></span><br></span><span class="token-line"><span class="token plain">            </span><span class="token namespace">slice</span><span class="token namespace punctuation">::</span><span class="token function">from_raw_parts_mut</span><span class="token punctuation">(</span><span class="token plain">ptr</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token plain">mid</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token plain"> len </span><span class="token operator">-</span><span class="token plain"> mid</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token plain"></span><br></span><span class="token-line"><span class="token plain">        </span><span class="token punctuation">)</span><span class="token plain"></span><br></span><span class="token-line"><span class="token plain">    </span><span class="token punctuation">}</span><span class="token plain"></span><br></span><span class="token-line"><span class="token plain"></span><span class="token punctuation">}</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg viewBox="0 0 24 24" class="copyButtonIcon_y97N"><path fill="currentColor" d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg viewBox="0 0 24 24" class="copyButtonSuccessIcon_LjdS"><path fill="currentColor" d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div></div></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="Docs pages"><a class="pagination-nav__link pagination-nav__link--prev" href="/docs/tutorial-extras/translate-your-site"><div class="pagination-nav__sublabel">Previous</div><div class="pagination-nav__label">Translate your site</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#futures-and-the-async-syntax" class="table-of-contents__link toc-highlight">Futures and the Async Syntax</a></li><li><a href="#our-first-async-program" class="table-of-contents__link toc-highlight">Our First Async Program</a><ul><li><a href="#defining-the-page_title-function" class="table-of-contents__link toc-highlight">Defining the page_title Function</a></li></ul></li><li><a href="#determining-a-single-pages-title" class="table-of-contents__link toc-highlight">Determining a Single Page’s Title</a><ul><li><a href="#racing-our-two-urls-against-each-other" class="table-of-contents__link toc-highlight">Racing Our Two URLs Against Each Other</a></li></ul></li></ul></div></div></div></div></main></div></div></div><div class="section footer"><div class="content"><div class="w-layout-grid grid-footer"><div id="w-node-_6603d099-87ea-d392-449a-caaf2cdb7f91-2cdb7f8e" data-w-id="6603d099-87ea-d392-449a-caaf2cdb7f91" class="block-footer"><img src="/img/logo.svg" loading="lazy" alt="" class="logo-footer"><p class="paragraph-footer">A highly scalable, reliable and open-source NR backhaul for high throughput, enterprise use cases.<br><br>‍<br><a href="mailto:info@yoursite.com" class="link-underlined">info@unifyair.com</a></p></div><div id="w-node-d3c0963b-94d1-2e8e-002f-dd4f891a4970-2cdb7f8e" class="w-layout-hflex flex-block"><div data-w-id="6603d099-87ea-d392-449a-caaf2cdb7f99" class="block-footer"><div class="heading-footer">Quick Links</div><a href="about.html" aria-current="page" class="link-footer w--current">About</a><a href="contact.html" class="link-footer">Contact</a><a href="blog.html" class="link-footer">Docs</a></div><div data-w-id="6603d099-87ea-d392-449a-caaf2cdb7fa5" class="block-footer"><div class="heading-footer">Social</div><a href="https://github.com/unifyair" target="_blank" class="link-footer">GitHub</a><a href="https://x.com/unifyair" target="_blank" class="link-footer">X</a><a href="https://discord.gg/yuJHdZ4vEF" target="_blank" class="link-footer">Discord</a><a href="https://unifyair.discourse.group" target="_blank" class="link-footer">Forum</a></div></div></div><div data-w-id="6603d099-87ea-d392-449a-caaf2cdb7fbb" class="footer-down"><p class="paragraph-footer"></p></div></div></div></div>
+</body>
+</html>
