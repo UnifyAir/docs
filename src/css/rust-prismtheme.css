@@ -1,0 +1,98 @@
+/* Based off of the Ayu theme */
+
+pre[class*="language-rust"] {
+  display: block;
+  overflow-x: auto;
+  background: #191f26; /* Background color */
+  color: #e6e1cf; /* Default text color */
+  font-family: "Source Code Pro", Consolas, "Ubuntu Mono", Menlo,
+    "DejaVu Sans Mono", monospace, monospace; /* Monospace font */
+  font-size: 0.875em;
+  border-radius: 0;
+  padding: 0;
+}
+
+pre[class*="language-rust"] {
+  padding: 0 em;
+  margin: 0;
+}
+
+/* Comments and Quotes */
+pre[class*="language-rust"] .token.comment,
+pre[class*="language-rust"] .token.block-comment,
+pre[class*="language-rust"] .token.prolog,
+pre[class*="language-rust"] .token.doctype,
+pre[class*="language-rust"] .token.cdata {
+  color: #5c6773; /* Dark gray */
+  font-style: italic; /* Italic for comments */
+}
+
+/* Variables, Attributes, and Selectors */
+pre[class*="language-rust"] .token.variable,
+pre[class*="language-rust"] .token.attr-name,
+pre[class*="language-rust"] .token.attribute,
+pre[class*="language-rust"] .token.regex,
+pre[class*="language-rust"] .token.selector {
+  color: #ff7733; /* Orange for variables and attributes */
+}
+
+/* Numbers, Literals, and Built-in Elements */
+pre[class*="language-rust"] .token.number,
+pre[class*="language-rust"] .token.constant,
+pre[class*="language-rust"] .token.symbol,
+pre[class*="language-rust"] .token.builtin,
+pre[class*="language-rust"] .token.property {
+  color: #ffee99; /* Yellow for numbers and literals */
+}
+
+/* Strings and Bullets */
+pre[class*="language-rust"] .token.string,
+pre[class*="language-rust"] .token.char,
+pre[class*="language-rust"] .token.bullet {
+  color: #b8cc52; /* Greenish-yellow for strings */
+}
+
+/* Function Names and Titles */
+pre[class*="language-rust"] .token.function,
+pre[class*="language-rust"] .token.class-name,
+pre[class*="language-rust"] .token.title,
+pre[class*="language-rust"] .token.macro.property {
+  color: #ffb454; /* Warm yellow for titles */
+}
+
+/* Keywords and Tags */
+pre[class*="language-rust"] .token.keyword,
+pre[class*="language-rust"] .token.tag {
+  color: #ff7733; /* Orange for keywords */
+}
+
+/* Names (e.g., selectors) */
+pre[class*="language-rust"] .token.selector-id,
+pre[class*="language-rust"] .token.selector-class {
+  color: #36a3d9; /* Blue for selectors */
+}
+
+/* Tags */
+pre[class*="language-rust"] .token.tag .token.punctuation {
+  color: #00568d; /* Darker blue for tag punctuation */
+}
+
+/* Emphasis and Strong */
+pre[class*="language-rust"] .token.italic {
+  font-style: italic; /* Italic for emphasis */
+}
+pre[class*="language-rust"] .token.bold {
+  font-weight: bold; /* Bold for strong */
+}
+
+/* Additions and Deletions (e.g., in diffs) */
+pre[class*="language-rust"] .token.inserted {
+  color: #91b362; /* Green for additions */
+}
+pre[class*="language-rust"] .token.deleted {
+  color: #d96c75; /* Red for deletions */
+}
+
+pre[class*="language-rust"] .token.namespace {
+  color: #dd97f1;
+}
