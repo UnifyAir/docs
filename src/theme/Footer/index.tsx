@@ -51,7 +51,7 @@ function Footer(): ReactNode {
                             <a href={`${prodUrl}/contact`} className="link-footer">
                                 Contact
                             </a>
-                            <a href='/docs' className="link-footer">
+                            <a href='/' className="link-footer">
                                 Docs
                             </a>
                         </div>
