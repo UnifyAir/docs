@@ -17,8 +17,6 @@ for line in lines {
 ```
 to this:
 ```rust
-# fn blah() -> Result<(), std::io::Error> {
-# let lines = vec!["one", "two", "three"];
 use std::io::Write;
 let mut stdout = std::io::stdout();
 let mut lock = stdout.lock();
@@ -26,8 +24,6 @@ for line in lines {
     writeln!(lock, "{}", line)?;
 }
 // stdout is unlocked when `lock` is dropped
-# Ok(())
-# }
 ```
 stdin and stderr can likewise be locked when doing repeated operations on them.
 
@@ -43,28 +39,20 @@ minimizing the number of system calls required.
 
 For example, change this unbuffered writer code:
 ```rust
-# fn blah() -> Result<(), std::io::Error> {
-# let lines = vec!["one", "two", "three"];
 use std::io::Write;
 let mut out = std::fs::File::create("test.txt")?;
 for line in lines {
     writeln!(out, "{}", line)?;
 }
-# Ok(())
-# }
 ```
 to this:
 ```rust
-# fn blah() -> Result<(), std::io::Error> {
-# let lines = vec!["one", "two", "three"];
 use std::io::{BufWriter, Write};
 let mut out = BufWriter::new(std::fs::File::create("test.txt")?);
 for line in lines {
     writeln!(out, "{}", line)?;
 }
 out.flush()?;
-# Ok(())
-# }
 ```
 [**Example 1**](https://github.com/rust-lang/rust/pull/93954),
 [**Example 2**](https://github.com/nnethercote/dhat-rs/pull/22/commits/8c3ae26f1219474ee55c30bc9981e6af2e869be2).

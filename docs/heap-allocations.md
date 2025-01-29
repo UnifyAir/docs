@@ -375,16 +375,12 @@ struct, to be reused in one or more methods that are called repeatedly.
 
 [`BufRead::lines`] makes it easy to read a file one line at a time:
 ```rust
-# fn blah() -> Result<(), std::io::Error> {
-# fn process(_: &str) {}
-use std::io::{self, BufRead};
+se std::io::{self, BufRead};
 let mut lock = io::stdin().lock();
 for line in lock.lines() {
     process(&line?);
 }
-# Ok(())
-# }
-```
+``
 But the iterator it produces returns `io::Result<String>`, which means it
 allocates for every line in the file.
 
@@ -393,18 +389,14 @@ allocates for every line in the file.
 An alternative is to use a workhorse `String` in a loop over
 [`BufRead::read_line`]:
 ```rust
-# fn blah() -> Result<(), std::io::Error> {
-# fn process(_: &str) {}
-use std::io::{self, BufRead};
+se std::io::{self, BufRead};
 let mut lock = io::stdin().lock();
 let mut line = String::new();
 while lock.read_line(&mut line)? != 0 {
     process(&line);
     line.clear();
 }
-# Ok(())
-# }
-```
+``
 This reduces the number of allocations to at most a handful, and possibly just
 one. (The exact number depends on how many times `line` needs to be
 reallocated, which depends on the distribution of line lengths in the file.)

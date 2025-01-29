@@ -49,14 +49,10 @@ eagerly. If its computation is expensive, you should instead use
 [`Option::ok_or_else`], which computes the error value lazily via a closure.
 For example, this:
 ```rust
-# fn expensive() {}
-# let o: Option<u32> = None;
 let r = o.ok_or(expensive()); // always evaluates `expensive()`
 ```
 should be changed to this:
 ```rust
-# fn expensive() {}
-# let o: Option<u32> = None;
 let r = o.ok_or_else(|| expensive()); // evaluates `expensive()` only when needed
 ```
 [**Example**](https://github.com/rust-lang/rust/pull/50051/commits/5070dea2366104fb0b5c344ce7f2a5cf8af176b0).

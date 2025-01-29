@@ -68,9 +68,6 @@ variants, with the latter calling the former.
 
 For example, this function:
 ```rust
-# fn one() {};
-# fn two() {};
-# fn three() {};
 fn my_function() {
     one();
     two();
@@ -79,9 +76,6 @@ fn my_function() {
 ```
 Would become these two functions:
 ```rust
-# fn one() {};
-# fn two() {};
-# fn three() {};
 // Use this at the hot call site.
 #[inline(always)]
 fn inlined_my_function() {

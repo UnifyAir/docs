@@ -17,7 +17,7 @@ function Footer(): ReactNode {
                         className="block-footer"
                     >
                         <img
-                            src="/docs/img/logo.svg"
+                            src="/img/logo.svg"
                             loading="lazy"
                             alt=""
                             className="logo-footer"
