@@ -5,6 +5,7 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import 'dotenv/config';
 
+
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
@@ -50,6 +51,18 @@ const config: Config = {
                 theme: {
                     customCss: ['./src/css/custom.css', './src/css/rust-prismtheme.css'],
                 },
+                sitemap: {
+                    lastmod: 'datetime',
+                    changefreq: 'weekly',
+                    priority: 0.5,
+                    ignorePatterns: ['/search', '/tags/**'],
+                    filename: 'sitemap.xml',
+                    createSitemapItems: async (params) => {
+                        const { defaultCreateSitemapItems, ...rest } = params;
+                        const items = await defaultCreateSitemapItems(rest);
+                        return items.filter((item) => !item.url.includes('/page/'));
+                    },
+                }
             } satisfies Preset.Options,
         ],
     ],
